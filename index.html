@@ -4,43 +4,48 @@
   <meta charset="UTF-8">
   <title>Let’s Hang Out at Gaijin Ramen!</title>
   <style>
+    /* Apply a colorful gradient background */
     body {
       margin: 0;
       padding: 0;
-      background: #f0f0f0;
-      overflow: hidden; /* Hide scrollbars as images float offscreen */
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
+      overflow: hidden;
       font-family: 'Comic Sans MS', cursive, sans-serif;
     }
+    /* Vibrant, shadowed header */
     h1 {
       position: absolute;
       width: 100%;
       text-align: center;
       top: 20px;
       font-size: 3em;
-      color: #ff4500;
-      text-shadow: 2px 2px 0 #fff;
+      color: #ffffff;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+      letter-spacing: 2px;
     }
-    /* Container for the floating effect */
+    /* Floating container for images with smoother animation */
     .float-container {
       position: absolute;
-      /* The animation moves the container along a fun path */
-      animation: float 10s linear infinite;
+      animation: float 10s ease-in-out infinite;
     }
-    /* The image inside will spin */
+    /* Spinning images with a border, shadow, and rounded edges */
     .spin {
-      width: 150px; /* adjust as needed */
+      width: 150px;
       height: auto;
+      border: 5px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
       animation: spin 5s linear infinite;
     }
-    /* Floating animation keyframes */
+    /* Keyframes for floating animation */
     @keyframes float {
       0%   { transform: translate(0, 0); }
-      25%  { transform: translate(100px, -50px); }
-      50%  { transform: translate(200px, 0); }
-      75%  { transform: translate(100px, 50px); }
+      25%  { transform: translate(150px, -50px); }
+      50%  { transform: translate(300px, 0); }
+      75%  { transform: translate(150px, 50px); }
       100% { transform: translate(0, 0); }
     }
-    /* Spinning animation keyframes */
+    /* Keyframes for spinning animation */
     @keyframes spin {
       from { transform: rotate(0deg); }
       to   { transform: rotate(360deg); }
@@ -63,11 +68,6 @@
   <!-- Image 3 -->
   <div class="float-container" style="top: 400px; left: 150px; animation-delay: 4s;">
     <img src="image3.jpg" alt="Funny Photo 3" class="spin">
-  </div>
-  
-  <!-- Image 4 -->
-  <div class="float-container" style="top: 350px; left: 500px; animation-delay: 1s;">
-    <img src="image6.jpg" alt="Funny Photo 4" class="spin">
   </div>
   
   <!-- Image 5 -->
