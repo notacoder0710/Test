@@ -2,77 +2,206 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Let’s Hang Out at Gaijin Ramen!</title>
+  <title>Hang Out at Gaijin Ramen?</title>
   <style>
-    /* Apply a colorful gradient background */
+    /* Overall professional styling */
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       overflow: hidden;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+      position: relative;
     }
-    /* Vibrant, shadowed header */
     h1 {
-      position: absolute;
-      width: 100%;
       text-align: center;
-      top: 20px;
-      font-size: 3em;
-      color: #ffffff;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-      letter-spacing: 2px;
+      margin-top: 40px;
+      font-size: 2.5em;
+      color: #333;
     }
-    /* Floating container for images with smoother animation */
+    #question {
+      text-align: center;
+      margin-top: 20px;
+    }
+    #question p {
+      font-size: 1.2em;
+      color: #555;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      margin: 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: white;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    /* Floating image containers with spinning effect */
     .float-container {
       position: absolute;
-      animation: float 10s ease-in-out infinite;
+      animation: float 12s ease-in-out infinite;
     }
-    /* Spinning images with a border, shadow, and rounded edges */
     .spin {
       width: 150px;
       height: auto;
-      border: 5px solid #fff;
-      border-radius: 50%;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-      animation: spin 5s linear infinite;
+      border: 3px solid #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      animation: spin 6s linear infinite;
     }
-    /* Keyframes for floating animation */
     @keyframes float {
-      0%   { transform: translate(0, 0); }
-      25%  { transform: translate(150px, -50px); }
-      50%  { transform: translate(300px, 0); }
-      75%  { transform: translate(150px, 50px); }
-      100% { transform: translate(0, 0); }
+      0% { transform: translate(0,0); }
+      25% { transform: translate(100px, -50px); }
+      50% { transform: translate(200px, 0); }
+      75% { transform: translate(100px, 50px); }
+      100% { transform: translate(0,0); }
     }
-    /* Keyframes for spinning animation */
     @keyframes spin {
       from { transform: rotate(0deg); }
-      to   { transform: rotate(360deg); }
+      to { transform: rotate(360deg); }
+    }
+    /* Overlays to cover the screen on selection */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1000;
+    }
+    /* Party overlay (rave mode) */
+    #partyOverlay {
+      display: none;
+      background: rgba(0, 0, 0, 0.8);
+    }
+    /* Rain overlay (depressing mode) */
+    #rainOverlay {
+      display: none;
+      background: rgba(100, 100, 100, 0.8);
+    }
+    /* Confetti styling */
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      opacity: 0.8;
+      animation: confetti-fall 3s linear infinite;
+    }
+    @keyframes confetti-fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    /* Raindrop styling */
+    .raindrop {
+      position: absolute;
+      bottom: 100%;
+      width: 2px;
+      height: 15px;
+      background: #0cf;
+      animation: rain 1s linear infinite;
+      opacity: 0.5;
+    }
+    @keyframes rain {
+      to {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Let's Hang Out at Gaijin Ramen!</h1>
+  <h1>Hang Out at Gaijin Ramen?</h1>
+  <div id="question">
+    <p>Would you like to join me for a meal at Gaijin Ramen?</p>
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+  </div>
   
-  <!-- Image 1 -->
+  <!-- Overlays for effects -->
+  <div id="partyOverlay" class="overlay"></div>
+  <div id="rainOverlay" class="overlay"></div>
+  
+  <!-- Floating spinning images -->
   <div class="float-container" style="top: 100px; left: 50px; animation-delay: 0s;">
     <img src="image1.jpg" alt="Funny Photo 1" class="spin">
   </div>
-  
-  <!-- Image 2 -->
   <div class="float-container" style="top: 200px; left: 300px; animation-delay: 2s;">
     <img src="image2.jpg" alt="Funny Photo 2" class="spin">
   </div>
-  
-  <!-- Image 3 -->
   <div class="float-container" style="top: 400px; left: 150px; animation-delay: 4s;">
     <img src="image3.jpg" alt="Funny Photo 3" class="spin">
   </div>
-  
-  <!-- Image 5 -->
+  <div class="float-container" style="top: 350px; left: 500px; animation-delay: 1s;">
+    <img src="image4.jpg" alt="Funny Photo 4" class="spin">
+  </div>
   <div class="float-container" style="top: 100px; left: 700px; animation-delay: 3s;">
     <img src="image5.jpg" alt="Funny Photo 5" class="spin">
   </div>
+  
+  <script>
+    // Function to generate confetti for party mode
+    function createConfetti() {
+      const partyOverlay = document.getElementById('partyOverlay');
+      for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        // Randomize confetti properties
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.top = Math.random() * 100 + 'vh';
+        confetti.style.animationDelay = Math.random() * 3 + 's';
+        const size = Math.random() * 8 + 5;
+        confetti.style.width = size + 'px';
+        confetti.style.height = size + 'px';
+        partyOverlay.appendChild(confetti);
+      }
+    }
+    
+    // Function to generate raindrops for depressing weather
+    function createRaindrops() {
+      const rainOverlay = document.getElementById('rainOverlay');
+      for (let i = 0; i < 200; i++) {
+        const drop = document.createElement('div');
+        drop.classList.add('raindrop');
+        drop.style.left = Math.random() * 100 + 'vw';
+        drop.style.animationDuration = (Math.random() * 0.5 + 0.5) + 's';
+        drop.style.animationDelay = Math.random() * 2 + 's';
+        rainOverlay.appendChild(drop);
+      }
+    }
+    
+    // Event listeners for the buttons
+    document.getElementById('yesBtn').addEventListener('click', function() {
+      // Hide the question
+      document.getElementById('question').style.display = 'none';
+      // Show party overlay and generate confetti
+      const partyOverlay = document.getElementById('partyOverlay');
+      partyOverlay.style.display = 'block';
+      createConfetti();
+      // Optionally, you could add rave music or additional animations here
+    });
+    
+    document.getElementById('noBtn').addEventListener('click', function() {
+      // Hide the question
+      document.getElementById('question').style.display = 'none';
+      // Show rain overlay and generate raindrops
+      const rainOverlay = document.getElementById('rainOverlay');
+      rainOverlay.style.display = 'block';
+      createRaindrops();
+    });
+  </script>
 </body>
 </html>
