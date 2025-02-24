@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Let’s Hang Out at Gaijin Ramen!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f0f0f0;
+      overflow: hidden; /* Hide scrollbars as images float offscreen */
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+    h1 {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      top: 20px;
+      font-size: 3em;
+      color: #ff4500;
+      text-shadow: 2px 2px 0 #fff;
+    }
+    /* Container for the floating effect */
+    .float-container {
+      position: absolute;
+      /* The animation moves the container along a fun path */
+      animation: float 10s linear infinite;
+    }
+    /* The image inside will spin */
+    .spin {
+      width: 150px; /* adjust as needed */
+      height: auto;
+      animation: spin 5s linear infinite;
+    }
+    /* Floating animation keyframes */
+    @keyframes float {
+      0%   { transform: translate(0, 0); }
+      25%  { transform: translate(100px, -50px); }
+      50%  { transform: translate(200px, 0); }
+      75%  { transform: translate(100px, 50px); }
+      100% { transform: translate(0, 0); }
+    }
+    /* Spinning animation keyframes */
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Let's Hang Out at Gaijin Ramen!</h1>
+  
+  <!-- Image 1 -->
+  <div class="float-container" style="top: 100px; left: 50px; animation-delay: 0s;">
+    <img src="image1.jpg" alt="Funny Photo 1" class="spin">
+  </div>
+  
+  <!-- Image 2 -->
+  <div class="float-container" style="top: 200px; left: 300px; animation-delay: 2s;">
+    <img src="image2.jpg" alt="Funny Photo 2" class="spin">
+  </div>
+  
+  <!-- Image 3 -->
+  <div class="float-container" style="top: 400px; left: 150px; animation-delay: 4s;">
+    <img src="image3.jpg" alt="Funny Photo 3" class="spin">
+  </div>
+  
+  <!-- Image 4 -->
+  <div class="float-container" style="top: 350px; left: 500px; animation-delay: 1s;">
+    <img src="image4.jpg" alt="Funny Photo 4" class="spin">
+  </div>
+  
+  <!-- Image 5 -->
+  <div class="float-container" style="top: 100px; left: 700px; animation-delay: 3s;">
+    <img src="image5.jpg" alt="Funny Photo 5" class="spin">
+  </div>
+</body>
+</html>
